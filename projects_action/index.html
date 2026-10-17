@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SHIN-PORTFOLIO - Projects</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&amp;family=Quicksand:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#fffbff",
+                      "error-container": "#ffdad6",
+                      "tertiary-fixed": "#f8d8ff",
+                      "surface-container-low": "#eef5f7",
+                      "secondary-fixed": "#ffe16d",
+                      "primary-container": "#db3237",
+                      "primary-fixed-dim": "#ffb3ae",
+                      "outline-variant": "#e4beba",
+                      "on-tertiary": "#ffffff",
+                      "surface-bright": "#f4fafd",
+                      "on-primary": "#ffffff",
+                      "on-background": "#161d1f",
+                      "on-tertiary-fixed-variant": "#692984",
+                      "tertiary": "#80409b",
+                      "inverse-surface": "#2b3234",
+                      "inverse-on-surface": "#ebf2f4",
+                      "on-secondary-fixed": "#221b00",
+                      "surface-container-high": "#e2e9ec",
+                      "primary": "#b71422",
+                      "surface-container-lowest": "#ffffff",
+                      "on-tertiary-fixed": "#320047",
+                      "secondary": "#705d00",
+                      "on-error-container": "#93000a",
+                      "on-surface": "#161d1f",
+                      "inverse-primary": "#ffb3ae",
+                      "secondary-container": "#fcd400",
+                      "primary-fixed": "#ffdad7",
+                      "on-tertiary-container": "#fffbff",
+                      "on-primary-fixed": "#410004",
+                      "background": "#f4fafd",
+                      "secondary-fixed-dim": "#e9c400",
+                      "surface-dim": "#d4dbdd",
+                      "error": "#ba1a1a",
+                      "outline": "#8f6f6d",
+                      "surface-tint": "#ba1724",
+                      "surface": "#f4fafd",
+                      "on-primary-fixed-variant": "#930014",
+                      "on-secondary": "#ffffff",
+                      "on-secondary-container": "#6e5c00",
+                      "tertiary-container": "#9b59b6",
+                      "tertiary-fixed-dim": "#ebb2ff",
+                      "surface-container": "#e8eff1",
+                      "on-secondary-fixed-variant": "#544600",
+                      "surface-container-highest": "#dde4e6",
+                      "on-surface-variant": "#5b403e",
+                      "surface-variant": "#dde4e6",
+                      "on-error": "#ffffff"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "md": "24px",
+                      "margin-mobile": "16px",
+                      "xs": "4px",
+                      "xl": "80px",
+                      "base": "8px",
+                      "gutter": "20px",
+                      "margin-desktop": "64px",
+                      "lg": "48px",
+                      "sm": "12px"
+              },
+              "fontFamily": {
+                      "body-md": [
+                              "Quicksand"
+                      ],
+                      "label-sm": [
+                              "Quicksand"
+                      ],
+                      "body-lg": [
+                              "Quicksand"
+                      ],
+                      "headline-xl": [
+                              "Bricolage Grotesque"
+                      ],
+                      "headline-lg": [
+                              "Bricolage Grotesque"
+                      ],
+                      "headline-lg-mobile": [
+                              "Bricolage Grotesque"
+                      ]
+              },
+              "fontSize": {
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "24px",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "label-sm": [
+                              "12px",
+                              {
+                                      "lineHeight": "16px",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "28px",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "headline-xl": [
+                              "48px",
+                              {
+                                      "lineHeight": "52px",
+                                      "letterSpacing": "-1px",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-lg": [
+                              "32px",
+                              {
+                                      "lineHeight": "38px",
+                                      "fontWeight": "800"
+                              }
+                      ],
+                      "headline-lg-mobile": [
+                              "28px",
+                              {
+                                      "lineHeight": "32px",
+                                      "fontWeight": "800"
+                              }
+                      ]
+              }
+            }
+          }
+        }
+    </script>
+<style>
+        .comic-border {
+            border: 3px solid #161d1f;
+        }
+        .comic-shadow {
+            box-shadow: 6px 6px 0px 0px #161d1f;
+        }
+        .comic-hover:hover {
+            transform: scale(1.02) rotate(-1deg);
+            box-shadow: 8px 8px 0px 0px #161d1f;
+        }
+        .pow-bubble {
+            opacity: 0;
+            transform: scale(0.5);
+            transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .comic-hover:hover .pow-bubble {
+            opacity: 1;
+            transform: scale(1) rotate(5deg);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden "bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar -->
+<nav class="bg-surface dark:bg-inverse-surface docked full-width top-0 border-b-4 border-on-background shadow-[4px_4px_0px_0px_#161d1f] flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 sticky top-0 z-50">
+<a class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-black text-primary italic tracking-tighter" href="#">
+            SHIN-PORTFOLIO
+        </a>
+<div class="hidden md:flex gap-md items-center">
+<a class="text-on-surface font-body-lg hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="../home_mischief_giggles/index.html">Hero</a>
+<a class="text-on-surface font-body-lg hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="../about_me_meet_the_gang/index.html">About</a>
+<a class="text-primary font-bold border-b-4 border-secondary pb-1 active:translate-y-1 active:shadow-none transition-all hover:text-secondary-container hover:skew-x-[-2deg]" href="../projects_action/index.html">Projects</a>
+<a class="text-on-surface font-body-lg hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="../contact_action_message/index.html">Contact</a>
+</div>
+<a href="../contact_action_message/index.html"  class="bg-secondary-container text-on-secondary-container font-label-sm text-label-sm px-md py-base comic-border comic-shadow active:translate-y-1 active:shadow-none transition-all hidden md:block">Hire Me!</a>
+<button id="menu-open-btn" class="md:hidden flex items-center justify-center p-base border-2 border-on-background">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</nav>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-xl">
+<!-- Header -->
+<div class="mb-lg text-center md:text-left relative">
+<h1 class="font-headline-xl text-headline-xl text-primary drop-shadow-[4px_4px_0px_#161d1f] italic">ACTION DECK!</h1>
+<p class="font-body-lg text-body-lg text-on-surface mt-sm bg-surface-container inline-block px-sm py-xs comic-border -rotate-1">My greatest feats of mischief.</p>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg">
+<!-- Card 1 -->
+<div class="bg-surface-container-lowest comic-border comic-shadow rounded-DEFAULT p-sm relative group comic-hover transition-all cursor-pointer">
+<div class="bg-primary px-sm py-xs comic-border text-on-primary font-label-sm text-label-sm absolute -top-3 -left-3 rotate-[-5deg]">PROJECT 01</div>
+<div class="w-full h-48 comic-border overflow-hidden mb-sm bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="A dynamic, 90s anime style illustration of a messy bedroom transformed into a high-tech command center. Bright primary colors, bold black outlines. A computer screen glows with chaotic lines of code. The lighting is bright and cheerful, evoking a sense of energetic mischief and youthful hacking adventures." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDT_GplwlzqREEgFlVkNs1aXjIY83CbzhFbhn4M5Osps_MxsfxARgv-2hTKL2gC405WS-qlr0kDVGZlIA1Mo8B58J7UqX6tlLPq-oKpN17MXTzDbRw-LW_ZJabfCbK0Gs9jtq_J3Pvzj2IJm6EMi90u3n3Job8JExbiuh38FALeiWEjOzN61kSfighzmuwa32uSTNW8_LX5VjjR3gRAHc_PF5RKKGMDXmILmxbnN0Lcm6B-9jn3fBgO"/>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-background mb-xs leading-tight">THE CHOC-BI PROTOCOL</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md line-clamp-2">Infiltrated the pantry defense grid to secure the ultimate snack stash. Flawless execution.</p>
+<div class="bg-surface-container px-sm py-base comic-border rounded-lg flex flex-col gap-xs">
+<div class="flex justify-between items-center border-b-2 border-on-background pb-xs">
+<span class="font-label-sm text-label-sm uppercase">Impact Level</span>
+<span class="font-headline-lg text-primary text-xl">9001!</span>
+</div>
+<div class="flex justify-between items-center pt-xs">
+<span class="font-label-sm text-label-sm uppercase">Mischief Rating</span>
+<span class="text-secondary-container bg-on-background px-2 font-bold rotate-2">MAXIMUM</span>
+</div>
+</div>
+<!-- Pow Bubble -->
+<div class="pow-bubble absolute -top-8 -right-8 bg-secondary-container comic-border rounded-[50%] w-24 h-24 flex items-center justify-center font-headline-lg text-headline-lg text-on-background rotate-12 z-10 shadow-[4px_4px_0px_0px_#b71422]">
+                    POW!
+                </div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface-container-lowest comic-border comic-shadow rounded-DEFAULT p-sm relative group comic-hover transition-all cursor-pointer">
+<div class="bg-secondary-container px-sm py-xs comic-border text-on-secondary-container font-label-sm text-label-sm absolute -top-3 -left-3 rotate-[3deg]">PROJECT 02</div>
+<div class="w-full h-48 comic-border overflow-hidden mb-sm bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="A vibrant, stylized comic-book illustration of a suburban backyard transformed into a chaotic jungle gym. Bright, flat colors with heavy black outlines. Toys are scattered like booby traps, and a makeshift cardboard fort stands triumphant. The atmosphere is playful, energetic, and slightly rebellious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsD3XdbtpfU9mY25bfxO5ACUIovGSf6RzI6fN5IbLxgHDXBcvz_rpjb7cXWp_gkKOCzgaASWw_M6vLirfVVPVEcYU0edlpoCYPqYKQ_2Nka7dgV8hwvJzT2OfVgEQ1l8xOz8DFpUXuLB267v3vzZyRTHB72Pwi1lUsKjQk98GzdypPx93fhjH4P8Ptfr4PJ1QIySeTNETQP_8qYVrWDhNFc_toX4siSKebdLgp4nvjN_pVsjmo-46o"/>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-background mb-xs leading-tight">OPERATION MUD SLIDE</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md line-clamp-2">Redesigned the backyard topography using only a garden hose and sheer willpower.</p>
+<div class="bg-surface-container px-sm py-base comic-border rounded-lg flex flex-col gap-xs">
+<div class="flex justify-between items-center border-b-2 border-on-background pb-xs">
+<span class="font-label-sm text-label-sm uppercase">Chaos Yield</span>
+<span class="font-headline-lg text-primary text-xl">8500</span>
+</div>
+<div class="flex justify-between items-center pt-xs">
+<span class="font-label-sm text-label-sm uppercase">Cleanup Diff.</span>
+<span class="text-error bg-error-container px-2 font-bold -rotate-2">EXTREME</span>
+</div>
+</div>
+<!-- Pow Bubble -->
+<div class="pow-bubble absolute -bottom-6 -right-6 bg-tertiary-container comic-border rounded-[40%_60%_70%_30%] w-20 h-20 flex items-center justify-center font-headline-lg text-headline-lg text-on-tertiary-container -rotate-12 z-10 shadow-[4px_4px_0px_0px_#161d1f]">
+                    ZAP!
+                </div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-lowest comic-border comic-shadow rounded-DEFAULT p-sm relative group comic-hover transition-all cursor-pointer mt-md md:mt-0">
+<div class="bg-tertiary px-sm py-xs comic-border text-on-tertiary font-label-sm text-label-sm absolute -top-3 -left-3 rotate-[-2deg]">PROJECT 03</div>
+<div class="w-full h-48 comic-border overflow-hidden mb-sm bg-surface-container-high">
+<img class="w-full h-full object-cover" data-alt="A dynamic, 90s anime style illustration of a living room where the furniture has been rearranged into a complex obstacle course. Bright, punchy colors, thick black outlines. A small dog sits at the peak of a pillow mountain, looking heroic. The lighting is sunny and energetic, capturing a moment of playful triumph." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDfGmjjwixmlwh-S_-0_3nOJ0-ZOi1NuBmljHSR79IzeqfnItnbAsAiEUhzzBVWH3nHDmlYyaONCG6BmhRQGchNIx46jhxD09pbVdm9CJBAPEZsnF1ZYOFsjdQltgKxyx26-YEUVlhy2ggLjWytLCHaWJ5tzO1LMyUmYe4wHV8JFl80lXS9U2GLhswrxM6nfFVQPEaDhr3pChfhzeEbiqhURZYVk7L3KEzahzeqolxHvHpMk5OoF85z"/>
+</div>
+<h3 class="font-headline-lg text-headline-lg text-on-background mb-xs leading-tight">SHIRO'S ASCENSION</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md line-clamp-2">Elevated the family pet to general status via a complex system of pillow forts.</p>
+<div class="bg-surface-container px-sm py-base comic-border rounded-lg flex flex-col gap-xs">
+<div class="flex justify-between items-center border-b-2 border-on-background pb-xs">
+<span class="font-label-sm text-label-sm uppercase">Cuteness Lvl</span>
+<span class="font-headline-lg text-tertiary text-xl">OVERFLOW</span>
+</div>
+<div class="flex justify-between items-center pt-xs">
+<span class="font-label-sm text-label-sm uppercase">Mom's Anger</span>
+<span class="text-on-background bg-secondary-container px-2 font-bold rotate-1">AVOIDED</span>
+</div>
+</div>
+<!-- Pow Bubble -->
+<div class="pow-bubble absolute top-1/2 -left-8 bg-primary comic-border rounded-[80%_20%_40%_60%] w-24 h-20 flex items-center justify-center font-headline-lg text-headline-lg text-on-primary rotate-6 z-10 shadow-[4px_4px_0px_0px_#fcd400]">
+                    BAM!
+                </div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-secondary-container dark:bg-secondary w-full flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop py-lg gap-md border-t-4 border-on-background full-width">
+<div class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-black text-on-secondary-container text-center md:text-left">
+            © 2024 Nohara Aesthetics. Built with mischief and Action Mask energy.
+        </div>
+<div class="flex gap-md">
+<a class="text-on-secondary-fixed-variant font-label-sm text-label-sm hover:scale-105 transition-transform active:rotate-1" href="#">Twitter</a>
+<a class="text-on-secondary-fixed-variant font-label-sm text-label-sm hover:scale-105 transition-transform active:rotate-1" href="#">Instagram</a>
+<a class="text-on-secondary-fixed-variant font-label-sm text-label-sm hover:scale-105 transition-transform active:rotate-1" href="#">Email</a>
+</div>
+</footer>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-[100] bg-background/95 backdrop-blur-sm translate-x-full transition-transform duration-300 ease-in-out flex flex-col items-center justify-center gap-lg p-margin-mobile">
+    <button id="close-menu" class="absolute top-6 right-6 p-2 brutal-border bg-surface text-on-background rounded-full active:scale-90 transition-transform">
+        <span class="material-symbols-outlined text-3xl">close</span>
+    </button>
+    <nav class="flex flex-col items-center gap-//md text-center">
+        <a href="../home_mischief_giggles/index.html" class="text-headline-lg text-primary font-black hover:rotate-2 transition-transform py-2">Hero</a>
+        <a href="../about_me_meet_the_gang/index.html" class="text-headline-lg text-on-background font-black hover:rotate-2 transition-transform py-2">About</a>
+        <a href="../projects_action/index.html" class="text-headline-lg text-on-background font-black hover:rotate-2 transition-transform py-2">Projects</a>
+        <a href="../contact_action_message/index.html" class="text-headline-lg text-on-background font-black hover:rotate-2 transition-transform py-2">Contact</a>
+        <a href="../contact_action_message/index.html" class="mt-md bg-primary text-on-primary font-body-lg px-8 py-3 rounded-full comic-border comic-button-shadow comic-button transition-all">Hire Me!</a>
+    </nav>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.querySelector('#menu-open-btn'); // The menu icon button
+    const closeBtn = document.getElementById('close-menu');
+    const menuOverlay = document.getElementById('mobile-menu');
+    const navLinks = document.querySelectorAll('#mobile-menu a');
+
+    if (!menuBtn || !menuOverlay) return;
+
+    function toggleMenu() {
+        menuOverlay.classList.toggle('translate-x-full');
+        document.body.classList.toggle('overflow-hidden');
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
+
+    // Close on click outside (though overlay is full screen, so not applicable here)
+});
+</script>
+
+</body></html>

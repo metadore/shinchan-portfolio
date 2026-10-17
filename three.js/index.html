@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #000;
+    }
+  </style>
+</head>
+<body>
+<!-- STITCH_THREEJS_START:ANIMATION_2 class="fixed inset-0 w-full h-full bg-transparent" -->
+<div class="fixed inset-0 w-full h-full bg-transparent" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_2" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_2');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+container.appendChild(renderer.domElement);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+scene.add(ambientLight);
+const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+dirLight.position.set(5, 5, 5);
+scene.add(dirLight);
+
+// Create a stylized "Crayon" 3D character (simplified Shin-chan silhouette)
+const group = new THREE.Group();
+
+// Head (Oval)
+const headGeom = new THREE.SphereGeometry(1, 32, 32);
+headGeom.scale(1.2, 0.9, 1);
+const headMat = new THREE.MeshPhongMaterial({ color: 0xffdbac });
+const head = new THREE.Mesh(headGeom, headMat);
+group.add(head);
+
+// Red Shirt
+const bodyGeom = new THREE.CylinderGeometry(0.7, 0.8, 1.2, 32);
+const bodyMat = new THREE.MeshPhongMaterial({ color: 0xff4d4d });
+const body = new THREE.Mesh(bodyGeom, bodyMat);
+body.position.y = -1;
+group.add(body);
+
+// Yellow Pants
+const pantsGeom = new THREE.CylinderGeometry(0.8, 0.8, 0.5, 32);
+const pantsMat = new THREE.MeshPhongMaterial({ color: 0xffd700 });
+const pants = new THREE.Mesh(pantsGeom, pantsMat);
+pants.position.y = -1.7;
+group.add(pants);
+
+// Floating "Crayon" particles
+const particlesGeom = new THREE.IcosahedronGeometry(0.1, 0);
+const colors = [0xff4d4d, 0xffd700, 0x4da6ff, 0x75ff4d];
+const particles = [];
+
+for(let i = 0; i < 20; i++) {
+    const mat = new THREE.MeshPhongMaterial({ color: colors[i % colors.length] });
+    const p = new THREE.Mesh(particlesGeom, mat);
+    p.position.set(
+        (Math.random() - 0.5) * 5,
+        (Math.random() - 0.5) * 5,
+        (Math.random() - 0.5) * 5
+    );
+    scene.add(p);
+    particles.push({ mesh: p, speed: Math.random() * 0.02 });
+}
+
+scene.add(group);
+camera.position.z = 5;
+
+function animate() {
+    requestAnimationFrame(animate);
+    
+    group.rotation.y += 0.01;
+    group.position.y = Math.sin(Date.now() * 0.002) * 0.1;
+    
+    particles.forEach(p => {
+        p.mesh.rotation.x += p.speed;
+        p.mesh.rotation.y += p.speed;
+        p.mesh.position.y += Math.sin(Date.now() * 0.001 + p.mesh.position.x) * 0.005;
+    });
+    
+    renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+animate();
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_2 -->
+</body>
+</html>

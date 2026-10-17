@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Mischief &amp; Giggles - Hero Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&amp;family=Quicksand:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-container": "#fffbff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#f8d8ff",
+                        "surface-container-low": "#eef5f7",
+                        "secondary-fixed": "#ffe16d",
+                        "primary-container": "#db3237",
+                        "primary-fixed-dim": "#ffb3ae",
+                        "outline-variant": "#e4beba",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#f4fafd",
+                        "on-primary": "#ffffff",
+                        "on-background": "#161d1f",
+                        "on-tertiary-fixed-variant": "#692984",
+                        "tertiary": "#80409b",
+                        "inverse-surface": "#2b3234",
+                        "inverse-on-surface": "#ebf2f4",
+                        "on-secondary-fixed": "#221b00",
+                        "surface-container-high": "#e2e9ec",
+                        "primary": "#b71422",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#320047",
+                        "secondary": "#705d00",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#161d1f",
+                        "inverse-primary": "#ffb3ae",
+                        "secondary-container": "#fcd400",
+                        "primary-fixed": "#ffdad7",
+                        "on-tertiary-container": "#fffbff",
+                        "on-primary-fixed": "#410004",
+                        "background": "#f4fafd",
+                        "secondary-fixed-dim": "#e9c400",
+                        "surface-dim": "#d4dbdd",
+                        "error": "#ba1a1a",
+                        "outline": "#8f6f6d",
+                        "surface-tint": "#ba1724",
+                        "surface": "#f4fafd",
+                        "on-primary-fixed-variant": "#930014",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#6e5c00",
+                        "tertiary-container": "#9b59b6",
+                        "tertiary-fixed-dim": "#ebb2ff",
+                        "surface-container": "#e8eff1",
+                        "on-secondary-fixed-variant": "#544600",
+                        "surface-container-highest": "#dde4e6",
+                        "on-surface-variant": "#5b403e",
+                        "surface-variant": "#dde4e6",
+                        "on-error": "#ffffff"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "md": "24px",
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "xl": "80px",
+                        "base": "8px",
+                        "gutter": "20px",
+                        "margin-desktop": "64px",
+                        "lg": "48px",
+                        "sm": "12px"
+                    },
+                    fontFamily: {
+                        "body-md": ["Quicksand"],
+                        "label-sm": ["Quicksand"],
+                        "body-lg": ["Quicksand"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"]
+                    },
+                    fontSize: {
+                        "body-md": ["16px", { lineHeight: "24px", fontWeight: "500" }],
+                        "label-sm": ["12px", { lineHeight: "16px", fontWeight: "700" }],
+                        "body-lg": ["18px", { lineHeight: "28px", fontWeight: "600" }],
+                        "headline-xl": ["48px", { lineHeight: "52px", letterSpacing: "-1px", fontWeight: "800" }],
+                        "headline-lg": ["32px", { lineHeight: "38px", fontWeight: "800" }],
+                        "headline-lg-mobile": ["28px", { lineHeight: "32px", fontWeight: "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .bounce-anim {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        .comic-border {
+            border: 2px solid #161d1f;
+        }
+        .comic-shadow {
+            box-shadow: 6px 6px 0px 0px #161d1f;
+        }
+        .comic-button-shadow {
+            box-shadow: 4px 4px 0px 0px #161d1f;
+        }
+        .comic-button:active {
+            box-shadow: 0px 0px 0px 0px #161d1f;
+            transform: translate(4px, 4px);
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden "bg-background text-on-background font-body-md overflow-x-hidden min-h-screen relative">
+<!-- Background Shader -->
+<!-- STITCH_SHADER_START:ANIMATION_3 class="fixed inset-0 w-full h-full -z-10" -->
+<div class="fixed inset-0 w-full h-full -z-10" style="display:block;">
+<canvas id="shader-canvas-ANIMATION_3" style="display:block;width:100%;height:100%"></canvas>
+<script>
+(function() {
+  const canvas = document.getElementById('shader-canvas-ANIMATION_3');
+
+  // Sync the WebGL drawing-buffer size with the CSS-driven layout size.
+  // This fires on initial layout and whenever the element is resized.
+  function syncSize() {
+    const w = canvas.clientWidth  || 1280;
+    const h = canvas.clientHeight || 720;
+    if (canvas.width !== w || canvas.height !== h) {
+      canvas.width  = w;
+      canvas.height = h;
+    }
+  }
+  if (typeof ResizeObserver !== 'undefined') {
+    new ResizeObserver(syncSize).observe(canvas);
+  }
+  syncSize();
+
+  const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+  if (!gl) return;
+  const vs = `attribute vec2 a_position;
+varying vec2 v_texCoord;
+void main() {
+  v_texCoord = a_position * 0.5 + 0.5;
+  gl_Position = vec4(a_position, 0.0, 1.0);
+}`;
+  const fs = `
+precision highp float;
+uniform float u_time;
+uniform vec2 u_resolution;
+varying vec2 v_texCoord;
+
+void main() {
+    vec2 uv = v_texCoord;
+    
+    // Playful wavy sky background
+    float wave = sin(uv.x * 5.0 + u_time * 0.5) * 0.05;
+    float wave2 = sin(uv.y * 3.0 - u_time * 0.3) * 0.02;
+    
+    vec3 color1 = vec3(0.6, 0.85, 1.0); // Sky Blue
+    vec3 color2 = vec3(0.95, 0.98, 1.0); // Soft White
+    
+    float mask = smoothstep(0.4 + wave, 0.6 + wave2, uv.y);
+    vec3 finalColor = mix(color1, color2, mask);
+    
+    // Add some playful "crayon texture" grain
+    float grain = fract(sin(dot(uv, vec2(12.9898, 78.233))) * 43758.5453);
+    finalColor -= grain * 0.03;
+    
+    gl_FragColor = vec4(finalColor, 1.0);
+}
+`;
+  function cs(type, src) {
+    const s = gl.createShader(type);
+    gl.shaderSource(s, src);
+    gl.compileShader(s);
+    return s;
+  }
+  const prog = gl.createProgram();
+  gl.attachShader(prog, cs(gl.VERTEX_SHADER, vs));
+  gl.attachShader(prog, cs(gl.FRAGMENT_SHADER, fs));
+  gl.linkProgram(prog);
+  gl.useProgram(prog);
+  const buf = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, buf);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1,-1, 1,-1, -1,1, 1,1]), gl.STATIC_DRAW);
+  const pos = gl.getAttribLocation(prog, 'a_position');
+  gl.enableVertexAttribArray(pos);
+  gl.vertexAttribPointer(pos, 2, gl.FLOAT, false, 0, 0);
+  const uTime = gl.getUniformLocation(prog, 'u_time');
+  const uRes = gl.getUniformLocation(prog, 'u_resolution');
+  const uMouse = gl.getUniformLocation(prog, 'u_mouse');
+
+  // u_mouse is in pixel coordinates matching u_resolution (ShaderToy convention).
+  // Shaders that need normalized coords should use: u_mouse / u_resolution.
+  let mouse = { x: canvas.width / 2, y: canvas.height / 2 };
+  window.addEventListener('mousemove', (event) => {
+    const rect = canvas.getBoundingClientRect();
+    if (rect.width && rect.height) {
+      const nx = (event.clientX - rect.left) / rect.width;
+      const ny = 1.0 - (event.clientY - rect.top) / rect.height;
+      mouse.x = nx * canvas.width;
+      mouse.y = ny * canvas.height;
+    }
+  });
+
+  function render(t) {
+    if (typeof ResizeObserver === 'undefined') syncSize();
+    gl.viewport(0, 0, canvas.width, canvas.height);
+    if (uTime) gl.uniform1f(uTime, t * 0.001);
+    if (uRes) gl.uniform2f(uRes, canvas.width, canvas.height);
+    if (uMouse) gl.uniform2f(uMouse, mouse.x, mouse.y);
+    gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
+    requestAnimationFrame(render);
+  }
+  render(0);
+})();
+</script>
+</div>
+<!-- STITCH_SHADER_END:ANIMATION_3 -->
+<!-- TopNavBar -->
+<nav class="bg-surface border-b-4 border-on-background shadow-[4px_4px_0px_0px_#161d1f] flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop py-4 sticky top-0 z-50 docked full-width">
+<div class="flex items-center gap-sm">
+<img alt="Mischief &amp; Giggles Logo" class="h-12 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNKK8Sop9WCnz1h6_DQbhjZ2hb6CBmXmy3aXsVOL1PFM6Xidln78KLlu3EgTMFOrTPNuScCSurlIK56AkBqDGGoJKlUzFMhIZMEZ5fpu2_YCAAt4c_kJucIv5_7Y-fcpSb2Yn7GAFrflEFYLWS1mrKkGJoFIxp4R0UmfXBbPmOSeXCelPTg42Gi3O4o-IGK8AJocS-cD1NmGkRFAYnNKRYQ7OPuXEKQrSXV1mv9yaoeS0CdS546Hys"/>
+<a class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg font-black text-primary italic tracking-tighter" href="#">SHIN-PORTFOLIO</a>
+</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex items-center gap-md">
+<a class="text-primary font-bold border-b-4 border-secondary pb-1 text-body-lg font-body-lg" href="index.html">Hero</a>
+<a class="text-on-surface font-body-lg hover:text-secondary-container hover:skew-x-[-2deg] transition-transform text-body-lg" href="../about_me_meet_the_gang/index.html">About</a>
+<a class="text-on-surface font-body-lg hover:text-secondary-container hover:skew-x-[-2deg] transition-transform text-body-lg" href="../projects_action/index.html">Projects</a>
+<a class="text-on-surface font-body-lg hover:text-secondary-container hover:skew-x-[-2deg] transition-transform text-body-lg" href="../contact_action_message/index.html">Contact</a>
+<a class="bg-primary text-on-primary font-body-lg text-body-lg px-6 py-2 rounded-full comic-border comic-button-shadow comic-button transition-all" href="../contact_action_message/index.html">
+                Hire Me!
+            </a>
+</div>
+<button id="menu-open-btn" class="md:hidden p-2 brutal-border bg-surface-container shadow-[2px_2px_0px_0px_#161d1f]">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</nav>
+<!-- Hero Section -->
+<main class="relative z-10 w-full max-w-[1280px] mx-auto px-margin-mobile md:px-margin-desktop py-xl min-h-[calc(100vh-100px)] flex flex-col md:flex-row items-center justify-center gap-lg">
+<!-- Text Content -->
+<div class="flex-1 text-center md:text-left flex flex-col gap-sm relative z-20">
+<div class="inline-block bg-secondary-container text-on-secondary-container px-4 py-1 rounded-full font-label-sm text-label-sm comic-border comic-shadow mb-4 -rotate-2 w-fit mx-auto md:mx-0">
+                Action Mask Approved!
+            </div>
+<h1 class="font-headline-xl text-headline-xl text-primary bounce-anim leading-tight drop-shadow-[2px_2px_0px_#161d1f]">
+                Creative Mischief &amp; Action Mask Energy
+            </h1>
+<p class="font-body-lg text-body-lg text-on-background mt-4 bg-surface p-4 comic-border comic-shadow rounded-lg rotate-1">
+                Welcome to my playground where design meets fun.
+            </p>
+<div class="mt-lg flex gap-md justify-center md:justify-start">
+<a class="bg-secondary text-on-secondary font-body-lg text-body-lg px-8 py-3 rounded-xl comic-border comic-button-shadow comic-button transition-all rotate-2" href="../projects_action/index.html">
+                    Explore Projects
+                </a>
+</div>
+</div>
+<!-- Interactive 3D Element Container -->
+<div class="flex-1 w-full h-[400px] md:h-[600px] relative z-10 bg-surface rounded-3xl comic-border comic-shadow overflow-hidden p-xs">
+<div class="w-full h-full rounded-2xl overflow-hidden relative">
+<!-- Fallback background just in case -->
+<div class="absolute inset-0 bg-primary-container/20"></div>
+<!-- STITCH_THREEJS_START:ANIMATION_2 class="absolute inset-0 w-full h-full" -->
+<div class="absolute inset-0 w-full h-full" style="display:block;">
+<script src="https://ajax.googleapis.com/ajax/libs/threejs/r125/three.min.js"></script>
+<div id="threejs-container-ANIMATION_2" style="width:100%;height:100%"></div>
+<script>
+(function() {
+  const container = document.getElementById('threejs-container-ANIMATION_2');
+  const devicePixelRatio = window.devicePixelRatio || 1;
+  
+const width = container.clientWidth || window.innerWidth;
+const height = container.clientHeight || window.innerHeight;
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+renderer.setSize(width, height);
+renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+container.appendChild(renderer.domElement);
+
+// Lighting
+const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+scene.add(ambientLight);
+const dirLight = new THREE.DirectionalLight(0xffffff, 1);
+dirLight.position.set(5, 5, 5);
+scene.add(dirLight);
+
+// Create a stylized "Crayon" 3D character (simplified Shin-chan silhouette)
+const group = new THREE.Group();
+
+// Head (Oval)
+const headGeom = new THREE.SphereGeometry(1, 32, 32);
+headGeom.scale(1.2, 0.9, 1);
+const headMat = new THREE.MeshPhongMaterial({ color: 0xffdbac });
+const head = new THREE.Mesh(headGeom, headMat);
+group.add(head);
+
+// Red Shirt
+const bodyGeom = new THREE.CylinderGeometry(0.7, 0.8, 1.2, 32);
+const bodyMat = new THREE.MeshPhongMaterial({ color: 0xff4d4d });
+const body = new THREE.Mesh(bodyGeom, bodyMat);
+body.position.y = -1;
+group.add(body);
+
+// Yellow Pants
+const pantsGeom = new THREE.CylinderGeometry(0.8, 0.8, 0.5, 32);
+const pantsMat = new THREE.MeshPhongMaterial({ color: 0xffd700 });
+const pants = new THREE.Mesh(pantsGeom, pantsMat);
+pants.position.y = -1.7;
+group.add(pants);
+
+// Floating "Crayon" particles
+const particlesGeom = new THREE.IcosahedronGeometry(0.1, 0);
+const colors = [0xff4d4d, 0xffd700, 0x4da6ff, 0x75ff4d];
+const particles = [];
+
+for(let i = 0; i < 20; i++) {
+    const mat = new THREE.MeshPhongMaterial({ color: colors[i % colors.length] });
+    const p = new THREE.Mesh(particlesGeom, mat);
+    p.position.set(
+        (Math.random() - 0.5) * 5,
+        (Math.random() - 0.5) * 5,
+        (Math.random() - 0.5) * 5
+    );
+    scene.add(p);
+    particles.push({ mesh: p, speed: Math.random() * 0.02 });
+}
+
+scene.add(group);
+camera.position.z = 5;
+
+function animate() {
+    requestAnimationFrame(animate);
+    
+    group.rotation.y += 0.01;
+    group.position.y = Math.sin(Date.now() * 0.002) * 0.1;
+    
+    particles.forEach(p => {
+        p.mesh.rotation.x += p.speed;
+        p.mesh.rotation.y += p.speed;
+        p.mesh.position.y += Math.sin(Date.now() * 0.001 + p.mesh.position.x) * 0.005;
+    });
+    
+    renderer.render(scene, camera);
+}
+
+window.addEventListener('resize', () => {
+    const w = container.clientWidth || window.innerWidth;
+    const h = container.clientHeight || window.innerHeight;
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+    renderer.setSize(w, h);
+});
+
+animate();
+
+})();
+</script>
+</div>
+<!-- STITCH_THREEJS_END:ANIMATION_2 -->
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-secondary-container dark:bg-secondary text-on-secondary-container dark:text-on-secondary border-t-4 border-on-background w-full flex flex-col md:flex-row justify-between items-center px-margin-desktop py-lg gap-md full-width z-20 relative">
+<div class="font-headline-lg text-headline-lg font-black text-on-secondary-container">
+            SHIN-PORTFOLIO
+        </div>
+<div class="font-body-md text-body-md text-center md:text-left">
+            © 2024 Nohara Aesthetics. Built with mischief and Action Mask energy.
+        </div>
+<div class="flex gap-md font-label-sm text-label-sm">
+<a class="text-on-secondary-fixed-variant hover:scale-105 transition-transform active:rotate-1" href="#">Twitter</a>
+<a class="text-on-secondary-fixed-variant hover:scale-105 transition-transform active:rotate-1" href="#">Instagram</a>
+<a class="text-on-secondary-fixed-variant hover:scale-105 transition-transform active:rotate-1" href="#">Email</a>
+</div>
+</footer>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-[100] bg-background/95 backdrop-blur-sm translate-x-full transition-transform duration-300 ease-in-out flex flex-col items-center justify-center gap-lg p-margin-mobile">
+    <button id="close-menu" class="absolute top-6 right-6 p-2 brutal-border bg-surface text-on-background rounded-full active:scale-90 transition-transform">
+        <span class="material-symbols-outlined text-3xl">close</span>
+    </button>
+    <nav class="flex flex-col items-center gap-//md text-center">
+        <a href="index.html" class="text-headline-lg text-primary font-black hover:rotate-2 transition-transform py-2">Hero</a>
+        <a href="../about_me_meet_the_gang/index.html" class="text-headline-lg text-on-background font-black hover:rotate-2 transition-transform py-2">About</a>
+        <a href="../projects_action/index.html" class="text-headline-lg text-on-background font-black hover:rotate-2 transition-transform py-2">Projects</a>
+        <a href="../contact_action_message/index.html" class="text-headline-lg text-on-background font-black hover:rotate-2 transition-transform py-2">Contact</a>
+        <a href="../contact_action_message/index.html" class="mt-md bg-primary text-on-primary font-body-lg px-8 py-3 rounded-full comic-border comic-button-shadow comic-button transition-all">Hire Me!</a>
+    </nav>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.querySelector('#menu-open-btn'); // The menu icon button
+    const closeBtn = document.getElementById('close-menu');
+    const menuOverlay = document.getElementById('mobile-menu');
+    const navLinks = document.querySelectorAll('#mobile-menu a');
+
+    if (!menuBtn || !menuOverlay) return;
+
+    function toggleMenu() {
+        menuOverlay.classList.toggle('translate-x-full');
+        document.body.classList.toggle('overflow-hidden');
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
+
+    // Close on click outside (though overlay is full screen, so not applicable here)
+});
+</script>
+
+</body></html>

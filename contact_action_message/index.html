@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Contact Shin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&amp;family=Quicksand:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary-container": "#fffbff",
+                        "error-container": "#ffdad6",
+                        "tertiary-fixed": "#f8d8ff",
+                        "surface-container-low": "#eef5f7",
+                        "secondary-fixed": "#ffe16d",
+                        "primary-container": "#db3237",
+                        "primary-fixed-dim": "#ffb3ae",
+                        "outline-variant": "#e4beba",
+                        "on-tertiary": "#ffffff",
+                        "surface-bright": "#f4fafd",
+                        "on-primary": "#ffffff",
+                        "on-background": "#161d1f",
+                        "on-tertiary-fixed-variant": "#692984",
+                        "tertiary": "#80409b",
+                        "inverse-surface": "#2b3234",
+                        "inverse-on-surface": "#ebf2f4",
+                        "on-secondary-fixed": "#221b00",
+                        "surface-container-high": "#e2e9ec",
+                        "primary": "#b71422",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary-fixed": "#320047",
+                        "secondary": "#705d00",
+                        "on-error-container": "#93000a",
+                        "on-surface": "#161d1f",
+                        "inverse-primary": "#ffb3ae",
+                        "secondary-container": "#fcd400",
+                        "primary-fixed": "#ffdad7",
+                        "on-tertiary-container": "#fffbff",
+                        "on-primary-fixed": "#410004",
+                        "background": "#f4fafd",
+                        "secondary-fixed-dim": "#e9c400",
+                        "surface-dim": "#d4dbdd",
+                        "error": "#ba1a1a",
+                        "outline": "#8f6f6d",
+                        "surface-tint": "#ba1724",
+                        "surface": "#f4fafd",
+                        "on-primary-fixed-variant": "#930014",
+                        "on-secondary": "#ffffff",
+                        "on-secondary-container": "#6e5c00",
+                        "tertiary-container": "#9b59b6",
+                        "tertiary-fixed-dim": "#ebb2ff",
+                        "surface-container": "#e8eff1",
+                        "on-secondary-fixed-variant": "#544600",
+                        "surface-container-highest": "#dde4e6",
+                        "on-surface-variant": "#5b403e",
+                        "surface-variant": "#dde4e6",
+                        "on-error": "#ffffff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "md": "24px",
+                        "margin-mobile": "16px",
+                        "xs": "4px",
+                        "xl": "80px",
+                        "base": "8px",
+                        "gutter": "20px",
+                        "margin-desktop": "64px",
+                        "lg": "48px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Quicksand"],
+                        "label-sm": ["Quicksand"],
+                        "body-lg": ["Quicksand"],
+                        "headline-xl": ["Bricolage Grotesque"],
+                        "headline-lg": ["Bricolage Grotesque"],
+                        "headline-lg-mobile": ["Bricolage Grotesque"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "600" }],
+                        "headline-xl": ["48px", { "lineHeight": "52px", "letterSpacing": "-1px", "fontWeight": "800" }],
+                        "headline-lg": ["32px", { "lineHeight": "38px", "fontWeight": "800" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "32px", "fontWeight": "800" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined[data-weight="fill"] {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Brutalist / Comic Effects */
+        .brutal-shadow {
+            box-shadow: 4px 4px 0px 0px #161d1f;
+        }
+        .brutal-shadow-lg {
+            box-shadow: 8px 8px 0px 0px #161d1f;
+        }
+        .brutal-border {
+            border: 2px solid #161d1f;
+        }
+        .brutal-border-thick {
+            border: 3px solid #161d1f;
+        }
+        
+        /* Crayon/Irregular Borders */
+        .crayon-border {
+            border: 3px solid #161d1f;
+            border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+        }
+        
+        /* Cape Swish Animation */
+        @keyframes capeSwish {
+            0% { transform: skewX(0deg) translateX(0); }
+            25% { transform: skewX(-15deg) translateX(-5px); }
+            50% { transform: skewX(10deg) translateX(5px); }
+            75% { transform: skewX(-5deg) translateX(-2px); }
+            100% { transform: skewX(0deg) translateX(0); }
+        }
+        .cape-swish-hover:hover {
+            animation: capeSwish 0.5s ease-in-out;
+        }
+
+        /* Subtle floating for decorations */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0) rotate(-2deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+        .float-decor {
+            animation: floatSlow 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden "bg-background min-h-screen flex flex-col font-body-md text-on-background selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopNavBar -->
+<header class="bg-surface border-b-4 border-on-background shadow-[4px_4px_0px_0px_#161d1f] flex justify-between items-center w-full px-margin-desktop py-4 sticky top-0 z-50 transition-all">
+<div class="font-headline-lg text-headline-lg font-black text-primary italic tracking-tighter">
+            SHIN-PORTFOLIO
+        </div>
+<!-- Web Nav -->
+<nav class="hidden md:flex items-center gap-lg">
+<a class="text-on-surface font-body-lg hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="../home_mischief_giggles/index.html">Hero</a>
+<a class="text-on-surface font-body-lg hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="../about_me_meet_the_gang/index.html">About</a>
+<a class="text-on-surface font-body-lg hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="../projects_action/index.html">Projects</a>
+<a class="text-primary font-bold border-b-4 border-secondary pb-1 hover:text-secondary-container hover:skew-x-[-2deg] transition-transform" href="../contact_action_message/index.html">Contact</a>
+</nav>
+<!-- Trailing Action -->
+<a href="../contact_action_message/index.html"  class="hidden md:flex items-center justify-center bg-primary text-on-primary font-body-lg px-6 py-2 brutal-border brutal-shadow hover:translate-y-1 hover:shadow-none hover:bg-primary-container transition-all rotate-[-2deg]">Hire Me!</a>
+<!-- Mobile Menu Icon (Visual Only for layout) -->
+<button id="menu-open-btn" class="md:hidden p-2 brutal-border bg-surface-container shadow-[2px_2px_0px_0px_#161d1f]">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow w-full max-w-7xl mx-auto px-margin-mobile md:px-margin-desktop py-xl relative overflow-hidden">
+<!-- Decorative Background Elements -->
+<div class="absolute top-10 left-10 md:left-20 w-32 h-32 md:w-48 md:h-48 opacity-20 pointer-events-none float-decor">
+<img class="w-full h-full object-contain" data-alt="A crayon-style doodle of a fluffy white dog resembling a marshmallow, drawn with thick irregular black outlines, simple comic style, light background, minimalist and playful 90s anime aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChiofEBxBtITdF4f0kwLnsJuyzxItJSxhJYyMBQblvYIrzZfA1Gxufl0ov_Rfn_uShMjWTLSwPJyQYBzStAawf_dBssmKVRdf9XjIKmFZabqx96j0fgnya2b9Mv_hPGlVokyidS6ZaWFDQrt4LtbLNG1bxV3AEhovZDvADP0q6lQtC7eBzMjVn0e6N-P58jw4YHYLrISya9Kl1tZup2DhTIxMbjBEP9p1Gx_wwQUTx7BcKJ64elh6_"/>
+</div>
+<div class="absolute bottom-20 right-10 md:right-20 w-32 h-32 md:w-48 md:h-48 opacity-20 pointer-events-none float-decor" style="animation-delay: -3s;">
+<img class="w-full h-full object-contain" data-alt="A crayon-style doodle of a star-shaped chocolate snack box, vibrant pink and green colors, thick hand-drawn black outlines, messy but energetic 90s comic book style illustration." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3nSIHENHIga91rt46VXjUUFdlMZtEsel8qGoDXAa9iOiZ2FqQrhhblwmBhWOyP5xjWn3yYQJurHT1UqzKHPSD4oq0DP6cb0WJNLhVY5twnS8J_1_LGFfecdhcEb6faunHXQz4GqJwNH3drGKkjKILRGP_dIE-51iPgoHcp3prz0K2NOAMaroLLA__Dpj_cR34Q2kAtOe_WxLETYU4qe_yt2P3R4KBecXrRGe78iWIwRDXTxnjLDnI"/>
+</div>
+<div class="flex flex-col items-center justify-center relative z-10">
+<div class="text-center mb-12 transform -rotate-2">
+<h1 class="font-headline-xl text-headline-xl md:text-[64px] text-primary brutal-shadow-lg inline-block bg-surface-container px-4 border-4 border-on-background mb-4">
+                    Send a Letter!
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto bg-surface-container-high px-4 py-2 brutal-border shadow-[2px_2px_0px_0px_#161d1f]">
+                    To the Nohara House. Please write clearly, I can't read cursive yet.
+                </p>
+</div>
+<!-- Contact Form "Letter" -->
+<div class="w-full max-w-2xl bg-surface-container-lowest p-6 md:p-10 brutal-border-thick brutal-shadow-lg relative transform rotate-1 transition-transform hover:rotate-0">
+<!-- Envelope Flap Graphic -->
+<div aria-hidden="true" class="absolute top-0 left-0 w-full h-12 overflow-hidden pointer-events-none">
+<svg class="w-full h-full fill-secondary-container stroke-[#161d1f] stroke-[2px]" preserveaspectratio="none" viewbox="0 0 100 10">
+<polygon points="0,0 50,10 100,0"></polygon>
+</svg>
+</div>
+<div class="mt-8 space-y-md">
+<!-- Name Input -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs uppercase tracking-widest" for="name">Who are you?</label>
+<input class="w-full bg-surface-container-lowest text-on-surface font-body-md py-3 px-4 crayon-border shadow-[4px_4px_0px_0px_#161d1f] focus:outline-none focus:border-tertiary focus:shadow-[6px_6px_0px_0px_#80409b] transition-all bg-striped-pattern" id="name" name="name" placeholder="Your Name..." type="text"/>
+</div>
+<!-- Email Input -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs uppercase tracking-widest" for="email">Return Address (Email)</label>
+<input class="w-full bg-surface-container-lowest text-on-surface font-body-md py-3 px-4 crayon-border shadow-[4px_4px_0px_0px_#161d1f] focus:outline-none focus:border-tertiary focus:shadow-[6px_6px_0px_0px_#80409b] transition-all" id="email" name="email" placeholder="email@domain.com" type="email"/>
+</div>
+<!-- Message Input -->
+<div>
+<label class="block font-label-sm text-label-sm text-on-surface mb-xs uppercase tracking-widest" for="message">The Secret Message</label>
+<textarea class="w-full bg-surface-container-lowest text-on-surface font-body-md py-3 px-4 crayon-border shadow-[4px_4px_0px_0px_#161d1f] focus:outline-none focus:border-tertiary focus:shadow-[6px_6px_0px_0px_#80409b] transition-all resize-none" id="message" name="message" placeholder="Write it here..." rows="5"></textarea>
+</div>
+<!-- Submit Button -->
+<div class="pt-sm flex justify-end">
+<button class="group flex items-center gap-2 bg-secondary-container text-on-secondary-container font-headline-lg text-[24px] px-8 py-4 brutal-border brutal-shadow-lg hover:translate-y-2 hover:translate-x-2 hover:shadow-none hover:bg-secondary-fixed active:bg-secondary-fixed-dim transition-all cape-swish-hover transform -rotate-2" type="submit">
+<span>Send the Action Message!</span>
+<span class="material-symbols-outlined text-[32px] group-hover:translate-x-2 transition-transform" data-icon="send">send</span>
+</button>
+</div>
+</div>
+<!-- Stamp Decoration -->
+<div class="absolute top-4 right-4 w-16 h-20 border-2 border-on-background border-dashed p-1 transform rotate-6 opacity-80">
+<div class="w-full h-full bg-primary-container brutal-border flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A tiny postage stamp featuring a masked superhero in a dramatic pose, red and yellow colors, bold thick outlines, comic book stamp design, slightly faded vintage texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCAEI1L-aoBiLo1gUtP7vzgFzDjsZJPpEd0xkq3PoIzULg-Hnxi5C-UVU1q0lMK8F3fohmTKn2TW5f6ixMh8UuesglfPZYZUWfyw9v5ldNvvxa2ajVA6wllyh0SOR2ebqa2jsN-MxweE2m4_qpTxr9MZc71YpfN_ldiHW-0MztptSIKP4dbV9JEFeRecFl9sDHVnh6S4QOij7Bp_hBj01GF2eCs2dqAVu79JBdhN9m_jEHcdJYUf81D"/>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full flex flex-col md:flex-row justify-between items-center px-margin-desktop py-lg gap-md bg-secondary-container dark:bg-secondary border-t-4 border-on-background">
+<div class="font-headline-lg text-headline-lg font-black text-on-secondary-container">
+            SHIN-PORTFOLIO
+        </div>
+<div class="font-body-md text-body-md text-on-secondary-container text-center md:text-left">
+            © 2024 Nohara Aesthetics. Built with mischief and Action Mask energy.
+        </div>
+<div class="flex gap-4">
+<a class="text-on-secondary-fixed-variant font-label-sm text-label-sm hover:text-on-secondary-container hover:underline hover:scale-105 active:rotate-1 transition-all" href="#">Twitter</a>
+<a class="text-on-secondary-fixed-variant font-label-sm text-label-sm hover:text-on-secondary-container hover:underline hover:scale-105 active:rotate-1 transition-all" href="#">Instagram</a>
+<a class="text-on-secondary-fixed-variant font-label-sm text-label-sm hover:text-on-secondary-container hover:underline hover:scale-105 active:rotate-1 transition-all" href="#">Email</a>
+</div>
+</footer>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="fixed inset-0 z-[100] bg-background/95 backdrop-blur-sm translate-x-full transition-transform duration-300 ease-in-out flex flex-col items-center justify-center gap-lg p-margin-mobile">
+    <button id="close-menu" class="absolute top-6 right-6 p-2 brutal-border bg-surface text-on-background rounded-full active:scale-90 transition-transform">
+        <span class="material-symbols-outlined text-3xl">close</span>
+    </button>
+    <nav class="flex flex-col items-center gap-//md text-center">
+        <a href="../home_mischief_giggles/index.html" class="text-headline-lg text-primary font-black hover:rotate-2 transition-transform py-2">Hero</a>
+        <a href="../about_me_meet_the_gang/index.html" class="text-headline-lg text-on-background font-black hover:rotate-2 transition-transform py-2">About</a>
+        <a href="../projects_action/index.html" class="text-headline-lg text-on-background font-black hover:rotate-2 transition-transform py-2">Projects</a>
+        <a href="../contact_action_message/index.html" class="text-headline-lg text-on-background font-black hover:rotate-2 transition-transform py-2">Contact</a>
+        <a href="../contact_action_message/index.html" class="mt-md bg-primary text-on-primary font-body-lg px-8 py-3 rounded-full comic-border comic-button-shadow comic-button transition-all">Hire Me!</a>
+    </nav>
+</div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuBtn = document.querySelector('#menu-open-btn'); // The menu icon button
+    const closeBtn = document.getElementById('close-menu');
+    const menuOverlay = document.getElementById('mobile-menu');
+    const navLinks = document.querySelectorAll('#mobile-menu a');
+
+    if (!menuBtn || !menuOverlay) return;
+
+    function toggleMenu() {
+        menuOverlay.classList.toggle('translate-x-full');
+        document.body.classList.toggle('overflow-hidden');
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+    if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', toggleMenu);
+    });
+
+    // Close on click outside (though overlay is full screen, so not applicable here)
+});
+</script>
+
+</body></html>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const submitBtn = document.querySelector('button[type="submit"]');
+    if (!submitBtn) return;
+    submitBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+        if (!name || !email || !message) {
+            alert('Oops! You missed a spot. Please fill in all fields so Shin can read your letter!');
+            return;
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            alert('That return address looks fishy! Please enter a real email.');
+            return;
+        }
+        submitBtn.innerHTML = '<span>Sending...</span>';
+        submitBtn.disabled = true;
+        setTimeout(() => {
+            alert('ACTION MESSAGE SENT! The Nohara house has received your letter. Wait for the mischief to begin!');
+            submitBtn.innerHTML = '<span>Send the Action Message!</span><span class="material-symbols-outlined text-[32px] group-hover:translate-x-2 transition-transform" data-icon="send">send</span>';
+            submitBtn.disabled = false;
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+        }, 1500);
+    });
+});
+</script>
